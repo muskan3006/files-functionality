@@ -1,7 +1,5 @@
 package com.knoldus
 
-import java.io.FileWriter
-
 import scala.io.Source
 
 /**
@@ -10,6 +8,7 @@ import scala.io.Source
 class WordCount {
   /**
    * It takes a file as input and count the words
+   *
    * @param fileName file name of which you want to count the words
    * @return
    */
@@ -20,7 +19,8 @@ class WordCount {
     source.close()
     words
   }
-
-
 }
+
+
+
 
