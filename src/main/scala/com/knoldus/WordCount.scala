@@ -4,16 +4,20 @@ import java.io.FileWriter
 
 import scala.io.Source
 
+/**
+ * In this class we count how many times a word occured
+ */
 class WordCount {
-
-  def countWords(fileName: String, outputDir: String): Map[String, Int] = {
-    val file = outputDir + " " + fileName.split("/").last
-    val fw = new FileWriter(file)
+  /**
+   * It takes a file as input and count the words
+   * @param fileName file name of which you want to count the words
+   * @return
+   */
+  def countWords(fileName: String): Map[String, Int] = {
     val source = Source.fromFile(fileName)
     val words = source.getLines.flatMap(_.split("\\s+"))
       .foldLeft(Map.empty[String, Int]) { (count, word) => count + (word.toLowerCase -> (count.getOrElse(word.toLowerCase, 0) + 1)) }
     source.close()
-    fw.close()
     words
   }
 
