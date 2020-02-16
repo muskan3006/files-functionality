@@ -40,8 +40,3 @@ class CapitalizeInFiles(directoryPath: String) {
   }
 }
 
-object A extends App {
-
-
-
-}
